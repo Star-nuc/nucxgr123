@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/select.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
+		<script type="text/javascript" src="js/select-ui.min.js"></script>
+		<script type="text/javascript" src="editor/kindeditor.js"></script>
+
+		<script type="text/javascript">
+			KE.show({
+				id: 'content7',
+				cssPath: './index.css'
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(e) {
+				$(".select1").uedSelect({
+					width: 345
+				});
+				$(".select2").uedSelect({
+					width: 167
+				});
+				$(".select3").uedSelect({
+					width: 100
+				});
+			});
+		</script>
+		<script>
+			function checkUesrPassword() {
+				var pass = document.getElementById("pass").value;
+				var rule = /^[a-zA-Z0-9]{6,20}$/;
+				if(!rule.test(pass)) {
+					document.getElementById("danger2").innerHTML = "用户名输入不合法";
+					document.getElementById("danger2").style = "color : red";
+				}else {
+					document.getElementById("danger2").innerHTML = "";
+				}
+			}
+			function checkUesrName() {
+				var user = document.getElementById("user").value;
+				var rule = /^[a-zA-Z]{1}[a-zA-Z0-9]{2,14}$/;
+				if(!rule.test(user)) {
+					document.getElementById("danger1").innerHTML = "密码输入不合法";
+					document.getElementById("danger1").style = "color : red";
+				}else {
+					document.getElementById("danger1").innerHTML = "";
+				}
+			}
+			function checkTrueName() {
+				var trueName = document.getElementById("trueName").value;
+				var rule = /^[a-zA-Z]{1}[a-zA-Z0-9]{2,14}$/;
+				if(!rule.test(trueName)) {
+					document.getElementById("danger3").innerHTML = "姓名输入不合法";
+					document.getElementById("danger3").style = "color : red";
+				}else {
+					document.getElementById("danger3").innerHTML = "";
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<div class="place">
+			<span>位置：</span>
+			<ul class="placeul">
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">添加用户</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="formbody">
+
+			<div id="tab1" class="tabson">
+				<ul class="forminfo">
+					<li>
+						<label>用户名<b>*</b></label>
+						<input id="user" onblur="checkUesrName()" placeholder="字母数字组合，开头是字母，3-15 个字符" name="classid" type="text" class="dfinput" style="width:345px;" />
+						<i id="danger1"></i>
+					</li>
+					<li>
+						<label>密码<b>*</b></label>
+						<input id="pass" onblur="checkUesrPassword()" placeholder="密码是 6-20 个字符，由数字和字母构成" name="Input" type="password" class="dfinput" style="width:345px;" />
+						<i id="danger2"></i>
+					</li>
+					<li>
+						<label>角色<b>*</b></label><cite><input name="sex" type="radio" value="" checked="checked" />超级管理员&nbsp;&nbsp;&nbsp;&nbsp;<input name="sex" type="radio" value="" />管理员</cite></li>
+					<li>
+						<label>用户状态<b>*</b></label><cite><input name="state" type="radio" value="" checked="checked" />启用&nbsp;&nbsp;&nbsp;&nbsp;<input name="state" type="radio" value="" />禁用</cite></li>
+					<li>
+						<label>真实姓名<b>*</b></label>
+						<input id="trueName" onblur="checkTrueName()" placeholder="2-5 个汉字，必填" name="classid" type="text" class="dfinput" style="width:345px;" />
+						<i id="danger3"></i>
+					</li>
+					<li>
+						<label>院系<b>*</b></label>
+						<input placeholder="" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>年级<b>*</b></label>
+						<input placeholder="" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>专业<b>*</b></label>
+						<input placeholder="" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>班级<b>*</b></label>
+						<input placeholder="" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>校内职务<b>*</b></label>
+						<input placeholder="" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>手机<b>*</b></label>
+						<input placeholder="" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>QQ<b>*</b></label>
+						<input placeholder="" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li><label>备注<b>*</b></label>
+
+						<textarea id="content7" name="content" style="width:700px;height:250px;visibility:hidden;"></textarea>
+					</li>
+					<li><label>&nbsp;</label><input name="" type="button" class="btn" value="马上发布" /></li>
+				</ul>
+
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+			$("#usual1 ul").idTabs();
+		</script>
+
+		<script type="text/javascript">
+			$('.tablelist tbody tr:odd').addClass('odd');
+		</script>
+
+		</div>
+
+	</body>
+
+</html>
